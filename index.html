@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Body Mass Index(BMI) is a measure of body fat based on height and weight that applies to adult men and women. View the BMI chart or use the calculator to compute yours.">
+        
+        <link rel="icon" href="img/favicon.png">
+
+        <!-- Facebook Open Graph Tag -->
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="BMI Calculator" />
+        <meta property="og:description"        content="Body Mass Index(BMI) is a measure of body fat based on height and weight that applies to adult men and women. View the BMI chart or use the calculator to compute yours." />
+        <meta property="og:image"              content="img/ogimage.jpg" />
+
+        <!-- Twitter Card Tag -->
+        <meta name="twitter:card"              content="summary" />
+        <meta name="twitter:title"             content="BMI Calculator" />
+        <meta name="twitter:description"       content="Body Mass Index(BMI) is a measure of body fat based on height and weight that applies to adult men and women. View the BMI chart or use the calculator to compute yours." />
+        <meta name="twitter:image"             content="img/ogimage.jpg" />
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=B612:ital@1&family=Geo&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Font Awesome Icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <title>BMI Calculator</title>
+    </head>
+    <body>          
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="p-4">
+                <h4>BMI Calculator</h4>
+                <img src="img/profile-picture.png" alt="author"> <br>
+                <div class="author-description">
+                    Developer: Mutaher Ahmed Shakil <br>
+                    <a href="mailto:evil.programmer.stephen@gmail.com/" class="fa fa-google"></a>
+                    <a href="https://www.facebook.com/mdmutaher.ahmed/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/mutaherahmedshakil/" class="fa fa-instagram"></a>
+                    <a href="https://github.com/Mutah3r/" class="fa fa-github"></a>
+                    
+                    <p class="m-2">
+                        <a href="https://mutah3r.github.io/personal-website/" target="_blank">
+                            <button type="button" class="btn btn-warning">Visit My Website</button>
+                         </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <form>
+                <div class="mb-3">
+                    <label for="feet" class="form-label">Height</label>
+                    <div id="inputFeetHelp" class="form-text" >ft</div>
+                    <input type="number" name="inputFeet" id="feet" class="form-control" aria-describedby="inputFeetHelp" min="1" max="10">
+                    <div id="inputFeetHelp" class="form-text">inch</div>
+                    <input type="number" name="inputInch" id="inch" class="form-control" aria-describedby="inputInchHelp" min="0" max="11">
+                </div>
+
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight</label>
+                    <div id="inputWeightHelp" class="form-text">kg</div>
+                    <input type="number" step="0.01" name="inputWeight" id="weight" class="form-control" aria-describedby="inputWeightHelp" min="1">
+                </div>
+                <button type="submit" class="calculateBMI">Calculate BMI</button>
+            </form>
+        </div>
+
+        <h2>Result</h2>
+        <div class="container result">
+            <div id="bmiInfo">
+                
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">CATAGORY</th>
+                        <th scope="col">BMI RANGE kg/m<sup>2</sup></sup></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="idx11">Severe Thinness</td>
+                        <td id="idx12">&lt;16</td>
+                    </tr>
+                    <tr>
+                        <td id="idx21">Moderate Thinness</td>
+                        <td id="idx22">16-17</td>
+                    </tr>
+                    <tr>
+                        <td id="idx31">Mild Thinness</td>
+                        <td id="idx32">17-18.5</td>
+                    </tr>
+                    <tr>
+                        <td id="idx41">Normal</td>
+                        <td id="idx42">18.5-25</td>
+                    </tr>
+                    <tr>
+                        <td id="idx51">Overweight</td>
+                        <td id="idx52">25-30</td>
+                    </tr>
+                    <tr>
+                        <td id="idx61">Obese Class I</td>
+                        <td id="idx62">30-35</td>
+                    </tr>
+                    <tr>
+                        <td id="idx71">Obese Class II</td>
+                        <td id="idx72">35-40</td>
+                    </tr>
+                    <tr>
+                        <td id="idx81">Obese Class III</td>
+                        <td id="idx82">&gt;40</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  
+        <!-- Custom JS -->
+        <script src="./script.js"></script>
+    </body>
+</html>
